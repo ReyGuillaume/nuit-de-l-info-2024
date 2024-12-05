@@ -1,8 +1,8 @@
-var modal = document.getElementsByClassName("Modal");
+var modal = document.getElementById("ModalPoumon");
 
-var btn = document.getElementsByClassName("poumon");
+var btn = document.getElementById("poumon");
 
-var span = document.getElementsByClassName("close");
+var span = document.querySelector(".close");
 
 btn.onclick = function () {
     modal.style.display = "block";

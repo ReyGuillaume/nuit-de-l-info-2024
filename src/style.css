@@ -105,6 +105,14 @@ h1 {
   color: #888;
 }
 
+.corps{
+  cursor: pointer;
+  transition: all ease 0.2s;
+}
+
+.corps:hover{
+  transform: scale(1.1);
+}
 .modal {
   display: none;
   position: fixed;
@@ -119,6 +127,7 @@ h1 {
 }
 
 .modal-content {
+  color: #000;
   background-color: #fefefe;
   margin: auto;
   padding: 20px;

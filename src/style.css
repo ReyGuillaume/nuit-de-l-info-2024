@@ -14,8 +14,8 @@
 }
 
 a {
+  color: black;
   font-weight: 500;
-  color: #646cff;
   text-decoration: inherit;
 }
 
@@ -54,6 +54,19 @@ header li {
   margin: 0 1.1vw;
   margin-bottom: 1.1vw;
   list-style: none;
+  transition: all ease 0.2s;
+}
+
+header a {
+  background-color: #646cff;
+  border: solid;
+  padding: 1.01vw;
+  border-radius: 10%;
+}
+
+header li:hover {
+  color: white;
+  transform: scale(1.1);
 }
 
 

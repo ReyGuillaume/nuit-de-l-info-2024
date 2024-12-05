@@ -169,6 +169,11 @@ footer a:hover {
   height: 65vh;
 }
 
+.modal-text {
+  text-align: justify;
+  text-justify: auto;
+}
+
 .close {
   color: black;
   float: right;

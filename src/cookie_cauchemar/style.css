@@ -24,6 +24,9 @@
     left: 51vw;
 }
 
+#image {
+    display: none;
+}
 
 #jeu {
     width: 49vw;

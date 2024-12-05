@@ -7,12 +7,26 @@ onload = _ => {
 
   let canvas = document.getElementById('jeu');
   var ctx = canvas.getContext('2d');
-  ctx.globalCompositeOperation = 'destination-over'
-  ctx.fillStyle = 'lightblue';
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-  ctx.fillStyle = 'red';
-  ctx.fillRect(200, 200, 150, 100);
-  ctx.fill();
+  console.log(canvas.width + ', ' + canvas.height)
+
+  canvas.width = canvas.clientWidth;
+  canvas.height = canvas.clientHeight;
+
+  
+  
+  var loop = () => {
+    ctx.fillStyle = 'lightblue';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    
+    const image = document.getElementById("image");
+    ctx.drawImage(image, 150, 500, 1575, 1000, canvas.width/2, canvas.height/2, 120, 80);
+    image.addEventListener("load", (e) => {
+    });
+
+    requestAnimationFrame(loop);
+  }
+  requestAnimationFrame(loop);
+
 
 
   function Counter(element, compte) {

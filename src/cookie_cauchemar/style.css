@@ -16,3 +16,16 @@
 .window {
     display: inline-block;
 }
+
+#cpt {
+    position: absolute;
+    font-size: 5vh;
+    top: 2vh;
+    left: 51vw;
+}
+
+
+#jeu {
+    width: 49vw;
+    height: 100vh;
+}

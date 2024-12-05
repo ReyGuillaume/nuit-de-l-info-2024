@@ -25,6 +25,32 @@
     color: #535bf2;
   }
   
+  .fond_test{
+    z-index:-1;
+    height:100%;
+    width:100%;
+    animation: animate 5s ease infinite;
+
+  }
+
+  @keyframes animate{
+    0%{
+      background-color: #0b37fc;
+    }
+    25%{
+      background-color: #0b9cfc;
+    }
+    50%{
+      background-color: #00eeff;
+    }
+    75%{
+      background-color: #0b9cfc;
+    }
+    100%{
+      background-color: #0b37fc;
+    }
+  }
+
   body {
     margin: 0;
     display: flex;
@@ -48,6 +74,7 @@
   
   header nav {
     display: flex;
+    flex-direction: column;
     justify-content: center;
   }
   
@@ -169,5 +196,13 @@
   
     button {
       background-color: #f9f9f9;
+    }
+    footer{
+      display: flex;
+      justify-content: center;
+      padding-top: 5%;
+      padding-bottom: 5%;
+      background-color: #747bff;
+      width: 100%;
     }
   }

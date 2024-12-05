@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    content: "";
+    background: rgba(0,0,0,0.3) url("./assets/secluded-island-in-ocean-l7qaxmbsuw61guvd.webp") center;
+    background-size: cover;
+    background-blend-mode: darken;
+    backdrop-filter: blur(3px);
+}
+
+body::before {
+
+}
+
+.menu {
+    display: flex;
+    background: #535bf2;
+    width: 20%;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}

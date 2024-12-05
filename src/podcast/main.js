@@ -1,19 +1,127 @@
 const container = document.querySelector('#container');
-const episodeList = document.querySelector('.episode-list');
 
 const racine = 'http://localhost:5173';
 
 function create(tagName, container, className) {
   const element = document.createElement(tagName);
   container.appendChild(element);
-  container.classList.add(className);
+  element.classList.add(className);
   return element;
 }
 
 const series = [
+    {
+      id: 1,
+      name: 'série 1',
+      previewUrl: '/src/podcast/assets/secluded-island-in-ocean-l7qaxmbsuw61guvd.webp',
+      videos: [
+        {
+          title: 'title',
+          description: 'description',
+          url: '/src/podcast/assets/test.mp4',
+          type: 'video/mp4'
+        },
+        {
+          title: 'title',
+          description: 'description',
+          url: '/src/podcast/assets/test.mp4',
+          type: 'video/mp4'
+        },
+        {
+          title: 'title',
+          description: 'description',
+          url: '/src/podcast/assets/test.mp4',
+          type: 'video/mp4'
+        },
+        {
+          title: 'title',
+          description: 'description',
+          url: '/src/podcast/assets/test.mp4',
+          type: 'video/mp4'
+        },
+        {
+          title: 'title',
+          description: 'description',
+          url: '/src/podcast/assets/test.mp4',
+          type: 'video/mp4'
+        }
+      ]
+    }, {
+      id: 2,
+      name: 'série 2',
+      previewUrl: '/src/podcast/assets/secluded-island-in-ocean-l7qaxmbsuw61guvd.webp',
+      videos: [
+        {
+          title: 'title',
+          description: 'description',
+          url: '/src/podcast/assets/test.mp4',
+          type: 'video/mp4'
+        },
+        {
+          title: 'title',
+          description: 'description',
+          url: '/src/podcast/assets/test.mp4',
+          type: 'video/mp4'
+        },
+        {
+          title: 'title',
+          description: 'description',
+          url: '/src/podcast/assets/test.mp4',
+          type: 'video/mp4'
+        },
+        {
+          title: 'title',
+          description: 'description',
+          url: '/src/podcast/assets/test.mp4',
+          type: 'video/mp4'
+        },
+        {
+          title: 'title',
+          description: 'description',
+          url: '/src/podcast/assets/test.mp4',
+          type: 'video/mp4'
+        }
+      ]
+    }, {
+      id: 3,
+      name: 'série 3',
+      previewUrl: '/src/podcast/assets/secluded-island-in-ocean-l7qaxmbsuw61guvd.webp',
+      videos: [
+        {
+          title: 'title',
+          description: 'description',
+          url: '/src/podcast/assets/test.mp4',
+          type: 'video/mp4'
+        },
+        {
+          title: 'title',
+          description: 'description',
+          url: '/src/podcast/assets/test.mp4',
+          type: 'video/mp4'
+        },
+        {
+          title: 'title',
+          description: 'description',
+          url: '/src/podcast/assets/test.mp4',
+          type: 'video/mp4'
+        },
+        {
+          title: 'title',
+          description: 'description',
+          url: '/src/podcast/assets/test.mp4',
+          type: 'video/mp4'
+        },
+        {
+          title: 'title',
+          description: 'description',
+          url: '/src/podcast/assets/test.mp4',
+          type: 'video/mp4'
+        }
+      ]
+    },
   {
-    id: 1,
-    name: 'série 1',
+    id: 4,
+    name: 'série 4',
     previewUrl: '/src/podcast/assets/secluded-island-in-ocean-l7qaxmbsuw61guvd.webp',
     videos: [
       {
@@ -47,45 +155,9 @@ const series = [
         type: 'video/mp4'
       }
     ]
-  },{
-    id: 2,
-    name: 'série 1',
-    previewUrl: '/src/podcast/assets/secluded-island-in-ocean-l7qaxmbsuw61guvd.webp',
-    videos: [
-      {
-        title: 'title',
-        description: 'description',
-        url: '/src/podcast/assets/test.mp4',
-        type: 'video/mp4'
-      },
-      {
-        title: 'title',
-        description: 'description',
-        url: '/src/podcast/assets/test.mp4',
-        type: 'video/mp4'
-      },
-      {
-        title: 'title',
-        description: 'description',
-        url: '/src/podcast/assets/test.mp4',
-        type: 'video/mp4'
-      },
-      {
-        title: 'title',
-        description: 'description',
-        url: '/src/podcast/assets/test.mp4',
-        type: 'video/mp4'
-      },
-      {
-        title: 'title',
-        description: 'description',
-        url: '/src/podcast/assets/test.mp4',
-        type: 'video/mp4'
-      }
-    ]
-  },{
-    id: 3,
-    name: 'série 1',
+  }, {
+    id: 5,
+    name: 'série 5',
     previewUrl: '/src/podcast/assets/secluded-island-in-ocean-l7qaxmbsuw61guvd.webp',
     videos: [
       {
@@ -120,12 +192,17 @@ const series = [
       }
     ]
   },
-]
+  ]
+
 
 const goBackButton = (container, callback) => {
-  const link = create('a', container);
+  const link = create('a', container, 'back-button');
   link.addEventListener('click', callback);
-  link.textContent = '< Back';
+  const span = create('span', link, 'material-symbols-outlined');
+  span.textContent = 'chevron_left'
+  const span2 = create('span2', link);
+  span2.textContent = 'Back';
+
 }
 
 const detailPage = (serie) => {
@@ -154,7 +231,7 @@ const mainPage = () => {
   container.innerHTML = '';
 
   goBackButton(container, () => {
-      location.href = racine;
+    location.href = racine;
   });
 
   const cardContainer = create('section', container, 'card-container');

@@ -12,6 +12,18 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
+
+  #evangelion{
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+  }
   
   a {
     color: black;
@@ -46,7 +58,6 @@
   
   header nav {
     display: flex;
-    flex-direction: column;
     justify-content: center;
   }
   
@@ -64,10 +75,37 @@
     border-radius: 10%;
   }
   
-  header li:hover {
-    color: rgb(136, 255, 0);
+  header li:hover #slide{
+    color: rgb(255, 255, 255);
     transform: scale(1.1);
+    left:0;
   }
+
+
+  
+  header li img{
+    width: '100px';
+  }
+
+  #slide {
+    position: absolute;
+    left: -100px;
+    width: 100px;
+    height: 100px;
+    background: blue;
+    -webkit-animation: slide 0.5s forwards;
+    -webkit-animation-delay: 2s;
+    animation: slide 0.5s forwards;
+    animation-delay: 2s;
+}
+
+@-webkit-keyframes slide {
+    100% { left: 0; }
+}
+
+@keyframes slide {
+    100% { left: 0; }
+}
   
   
   h1 {

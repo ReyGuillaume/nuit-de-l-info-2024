@@ -1,3 +1,5 @@
+import {series} from "./assets/podcasts.js";
+
 const container = document.querySelector('#container');
 
 const racine = 'http://localhost:5173';
@@ -9,192 +11,6 @@ function create(tagName, container, className) {
   return element;
 }
 
-const series = [
-    {
-      id: 1,
-      name: 'série 1',
-      previewUrl: '/src/podcast/assets/secluded-island-in-ocean-l7qaxmbsuw61guvd.webp',
-      videos: [
-        {
-          title: 'title',
-          description: 'description',
-          url: '/src/podcast/assets/test.mp4',
-          type: 'video/mp4'
-        },
-        {
-          title: 'title',
-          description: 'description',
-          url: '/src/podcast/assets/test.mp4',
-          type: 'video/mp4'
-        },
-        {
-          title: 'title',
-          description: 'description',
-          url: '/src/podcast/assets/test.mp4',
-          type: 'video/mp4'
-        },
-        {
-          title: 'title',
-          description: 'description',
-          url: '/src/podcast/assets/test.mp4',
-          type: 'video/mp4'
-        },
-        {
-          title: 'title',
-          description: 'description',
-          url: '/src/podcast/assets/test.mp4',
-          type: 'video/mp4'
-        }
-      ]
-    }, {
-      id: 2,
-      name: 'série 2',
-      previewUrl: '/src/podcast/assets/secluded-island-in-ocean-l7qaxmbsuw61guvd.webp',
-      videos: [
-        {
-          title: 'title',
-          description: 'description',
-          url: '/src/podcast/assets/test.mp4',
-          type: 'video/mp4'
-        },
-        {
-          title: 'title',
-          description: 'description',
-          url: '/src/podcast/assets/test.mp4',
-          type: 'video/mp4'
-        },
-        {
-          title: 'title',
-          description: 'description',
-          url: '/src/podcast/assets/test.mp4',
-          type: 'video/mp4'
-        },
-        {
-          title: 'title',
-          description: 'description',
-          url: '/src/podcast/assets/test.mp4',
-          type: 'video/mp4'
-        },
-        {
-          title: 'title',
-          description: 'description',
-          url: '/src/podcast/assets/test.mp4',
-          type: 'video/mp4'
-        }
-      ]
-    }, {
-      id: 3,
-      name: 'série 3',
-      previewUrl: '/src/podcast/assets/secluded-island-in-ocean-l7qaxmbsuw61guvd.webp',
-      videos: [
-        {
-          title: 'title',
-          description: 'description',
-          url: '/src/podcast/assets/test.mp4',
-          type: 'video/mp4'
-        },
-        {
-          title: 'title',
-          description: 'description',
-          url: '/src/podcast/assets/test.mp4',
-          type: 'video/mp4'
-        },
-        {
-          title: 'title',
-          description: 'description',
-          url: '/src/podcast/assets/test.mp4',
-          type: 'video/mp4'
-        },
-        {
-          title: 'title',
-          description: 'description',
-          url: '/src/podcast/assets/test.mp4',
-          type: 'video/mp4'
-        },
-        {
-          title: 'title',
-          description: 'description',
-          url: '/src/podcast/assets/test.mp4',
-          type: 'video/mp4'
-        }
-      ]
-    },
-  {
-    id: 4,
-    name: 'série 4',
-    previewUrl: '/src/podcast/assets/secluded-island-in-ocean-l7qaxmbsuw61guvd.webp',
-    videos: [
-      {
-        title: 'title',
-        description: 'description',
-        url: '/src/podcast/assets/test.mp4',
-        type: 'video/mp4'
-      },
-      {
-        title: 'title',
-        description: 'description',
-        url: '/src/podcast/assets/test.mp4',
-        type: 'video/mp4'
-      },
-      {
-        title: 'title',
-        description: 'description',
-        url: '/src/podcast/assets/test.mp4',
-        type: 'video/mp4'
-      },
-      {
-        title: 'title',
-        description: 'description',
-        url: '/src/podcast/assets/test.mp4',
-        type: 'video/mp4'
-      },
-      {
-        title: 'title',
-        description: 'description',
-        url: '/src/podcast/assets/test.mp4',
-        type: 'video/mp4'
-      }
-    ]
-  }, {
-    id: 5,
-    name: 'série 5',
-    previewUrl: '/src/podcast/assets/secluded-island-in-ocean-l7qaxmbsuw61guvd.webp',
-    videos: [
-      {
-        title: 'title',
-        description: 'description',
-        url: '/src/podcast/assets/test.mp4',
-        type: 'video/mp4'
-      },
-      {
-        title: 'title',
-        description: 'description',
-        url: '/src/podcast/assets/test.mp4',
-        type: 'video/mp4'
-      },
-      {
-        title: 'title',
-        description: 'description',
-        url: '/src/podcast/assets/test.mp4',
-        type: 'video/mp4'
-      },
-      {
-        title: 'title',
-        description: 'description',
-        url: '/src/podcast/assets/test.mp4',
-        type: 'video/mp4'
-      },
-      {
-        title: 'title',
-        description: 'description',
-        url: '/src/podcast/assets/test.mp4',
-        type: 'video/mp4'
-      }
-    ]
-  },
-  ]
-
-
 const goBackButton = (container, callback) => {
   const link = create('a', container, 'back-button');
   link.addEventListener('click', callback);
@@ -203,6 +19,27 @@ const goBackButton = (container, callback) => {
   const span2 = create('span2', link);
   span2.textContent = 'Back';
 
+}
+
+let overlay = undefined;
+
+const openVideoModal = (videoDetails) => {
+  overlay = create('div', container, 'overlay');
+  overlay.addEventListener('click', closeVideoModal);
+
+  const modal = create('div', overlay, 'modal');
+  modal.addEventListener('click', e => e.stopPropagation())
+  const videoComponent = create('video', modal);
+  videoComponent.controls = true;
+  videoComponent.autoplay = true;
+  const videoSource = create('source', videoComponent);
+  videoSource.src = videoDetails.url
+  videoSource.type = videoDetails.type
+}
+
+const closeVideoModal = () => {
+  overlay.remove();
+  overlay = undefined;
 }
 
 const detailPage = (serie) => {
@@ -214,7 +51,6 @@ const detailPage = (serie) => {
   serie.videos.forEach(video => {
     const card = create('div', cardContainer, 'card');
     const videoComponent = create('video', card);
-    videoComponent.controls = true;
     const videoSource = create('source', videoComponent);
     videoSource.src = video.url
     videoSource.type = video.type
@@ -223,7 +59,7 @@ const detailPage = (serie) => {
     const title = create('h2', cardDetails)
     title.textContent = video.title;
 
-    card.addEventListener('click', () => detailPage(serie));
+    card.addEventListener('click', () => openVideoModal(video))
   })
 }
 

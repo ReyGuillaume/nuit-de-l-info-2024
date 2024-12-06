@@ -27,7 +27,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   flex-direction: column;
-  font-family: 'Helvetica';
+  font-family: 'Helvetica' , sans-serif;
 }
 
 header {
@@ -59,7 +59,7 @@ header a {
   background-color: #646cff;
   border: solid;
   padding: 1.01vw;
-  border-radius: 10%;
+  border-radius: 10px;
 }
 
 header li:hover {
@@ -209,7 +209,7 @@ footer a:hover {
   background-color: #747bff;
   text-align: justify;
   text-justify: auto;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;  border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;  border-radius: 30px;
   padding: 10px;
   max-width: 60%;
 }
@@ -227,13 +227,13 @@ footer a:hover {
   }
 }
 
- .modal-div img{
+.modal-div img{
   height: 45vh;
   width: 60%;
   margin-left: 5vw;
   margin-top: 10vh;
-  border-radius: 5%;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;  border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+  border-radius: 30px;
 } 
 
 .close {

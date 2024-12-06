@@ -46,10 +46,10 @@
   }
   .waves {
     position: fixed; /* Positionnement par rapport à .ocean */
-    top: 50vh; /* Contrôle de la position verticale */
+    top: 50%; /* Contrôle de la position verticale */
     width: 200%; /* Augmente la largeur pour permettre un défilement fluide */
-    height: 12vh;
-    animation: animate_waves 10s infinite alternate; /* Animation fluide et continue */
+    height: 100%;
+    animation: animate_waves 60s infinite alternate; /* Animation fluide et continue */
     z-index: -1; /* Place les vagues derrière le contenu principal */
     background: url('wave.png') repeat-x;
   }
@@ -58,11 +58,11 @@
 
   .continuite{
     position : fixed;
-    height:100vh;
+    height:100%;
     width: 100%;
-    z-index: -1;
+    z-index: -2;
     background-color: #124559;
-    margin-top: 41vh;
+    margin-top: 28%;
   }
 
   @keyframes animate_waves{

@@ -2,7 +2,7 @@ import {series} from "./assets/podcasts.js";
 
 const container = document.querySelector('#container');
 
-const racine = 'http://localhost:5173';
+const racine = 'http://51.91.146.174:8080';
 
 function create(tagName, container, className) {
   const element = document.createElement(tagName);
@@ -35,11 +35,21 @@ const openVideoModal = (videoDetails) => {
   const videoSource = create('source', videoComponent);
   videoSource.src = videoDetails.url
   videoSource.type = videoDetails.type
+
+  document.addEventListener('keydown', handleEscapeKey);
 }
+
+const handleEscapeKey = (event) => {
+  if (event.key === 'Escape') {
+    closeVideoModal();
+  }
+};
 
 const closeVideoModal = () => {
   overlay.remove();
   overlay = undefined;
+
+  document.removeEventListener('keydown', handleEscapeKey);
 }
 
 const detailPage = (serie) => {

@@ -133,15 +133,27 @@ footer{
   width: 50vw;
 }
 
-#jeu {
+#jeu_container {
+  position: relative;
   width: 50vw;
   height: 90vh;
   border: #000000 2px solid;
 }
 
+#jeu_container > *{
+  position: absolute;
+}
+
+#jeu{
+  width: 100%; height: 100%;
+  top: 0; left: 0;
+}
 
 
-
+#mode-facile {
+  top: 1vh;
+  left: 2vw;
+}
 
 .poisson {
   display: none;

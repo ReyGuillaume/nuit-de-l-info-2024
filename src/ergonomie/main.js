@@ -51,4 +51,19 @@ resetButton.addEventListener('click', () => {
     input.classList.remove('input-checked');
     input.classList.add('input');
   })
+
+  inputs.forEach((input, index) => {
+    input.chiffre = 0;
+    input.textContent = input.chiffre;
+
+    // Vitesse calculée en fonction de l'index
+    const interval = 2000 / (index + 1);
+
+    // Lancement du défilement pour chaque input
+    // Stocker l'ID de l'intervalle
+    intervals[index] = setInterval(() => {
+      input.chiffre = (input.chiffre + 1) % 10;
+      input.textContent = input.chiffre;
+    }, interval);
+  });
 })

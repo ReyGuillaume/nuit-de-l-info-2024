@@ -25,6 +25,8 @@
     color: #535bf2;
   }
   
+
+
   .ocean{
     position: relative;
     height:100%;
@@ -32,12 +34,22 @@
     overflow: hidden;
 
   }
+
+  .ciel {
+    position: fixed; /* Positionnement par rapport à .ocean */
+    top:0vh; /* Contrôle de la position verticale */
+    z-index: -2;
+    height:100vh;
+    background: url("ciel_beau.png") no-repeat center center;
+    background-size: cover;
+    width: 100%; /* Augmente la largeur pour permettre un défilement fluide */
+  }
   .waves {
     position: fixed; /* Positionnement par rapport à .ocean */
-    top: 50vh; /* Contrôle de la position verticale */
+    top: 50%; /* Contrôle de la position verticale */
     width: 200%; /* Augmente la largeur pour permettre un défilement fluide */
-    height: 12vh;
-    animation: animate_waves 5s infinite linear; /* Animation fluide et continue */
+    height: 100%;
+    animation: animate_waves 60s infinite alternate; /* Animation fluide et continue */
     z-index: -1; /* Place les vagues derrière le contenu principal */
     background: url('wave.png') repeat-x;
   }
@@ -46,11 +58,11 @@
 
   .continuite{
     position : fixed;
-    height:100vh;
+    height:100%;
     width: 100%;
-    z-index: -1;
+    z-index: -2;
     background-color: #124559;
-    margin-top: 41vh;
+    margin-top: 28%;
   }
 
   @keyframes animate_waves{
@@ -79,6 +91,7 @@
   }
   
 .membres{
+  position: relative;
   height:100%;
   width:100%
   
@@ -121,26 +134,26 @@
     left:0;
   }
 
-
   
   .image{
     position: relative;
+    display: block;
     width:10vw;
     height:10vw;
     border-radius: 50%;
-    opacity: .5;
-  }
-  .image::before{
-    content:"";
-    position: absolute;
-    top: 0;
-    left:0;
-    background-image: url("bubble.png");
-    background-size:cover ;
-    background-position: center;
     z-index:1;
-    width: 100%;
-    height: 100%;
+
+  }
+ 
+  .bulle{
+    margin-left: 14.8vw;
+    position: absolute;
+    display: block;
+    width:10vw;
+    height:10vw;
+    border-radius: 50%;
+    z-index: 10;
+    opacity: .5;
   }
 
   #slide {

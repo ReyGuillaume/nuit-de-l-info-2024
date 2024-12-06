@@ -9,7 +9,7 @@ function variate(baseValue, maxVariation){
 
 var settings = {
     sun: {
-        color: 0xa4bfff,
+        color: 0x8888ee,
         position: new THREE.Vector3(-6, 10, 10),
         shadow: {
             size: 40
@@ -19,11 +19,11 @@ var settings = {
         color: 0x999999
     },
     scene: {
-        background: 0x455ebd
+        background: 0x334499
     },
     wind: {
         minRot: 3,
-        maxRot: 11,
+        maxRot: 13,
         period: 15,
         axis: new THREE.Vector3(1, 0, 1)
     },
@@ -39,6 +39,16 @@ var settings = {
         maxScaleVar: 0.4,
         maxHeightVar: 2,
         animTimeScale: 4,
+    },
+    camera: {
+        up:{
+            maxDist: 1,
+            period: 2
+        },
+        forward:{
+            maxDist: 1,
+            period: 2
+        }
     }
 }
 
@@ -56,6 +66,7 @@ scene.background = new THREE.Color(settings.scene.background);
 
 const camera = new THREE.PerspectiveCamera(50, getWidth()/getHeight(), 0.1, 1000);
 camera.position.set(0, 0, -5);
+camera.initial_position = camera.position.clone();
 
 const renderer = new THREE.WebGLRenderer({
     antialias: true,
@@ -69,6 +80,7 @@ window.addEventListener("resize", () => {
 });
 
 const controls = new OrbitControls(camera, renderer.domElement);
+controls.enableDamping = controls.enablePan = controls.enableRotate = false;
 //#endregion
 
 //#region Elements
@@ -240,8 +252,31 @@ function updateFishes(){
     });
 }
 
+let cameraTime = 0;
+
+function updateCameraMovement(){
+    // FIXME (pas le temps): Ne marche pas, la camera s'inverse
+    // et je ne peux pas enlever OrbitControls.
+
+    // cameraTime += delta;
+
+    // let forward = camera.getWorldDirection(new THREE.Vector3()).clone();
+    // forward.y = 0;
+    // forward.normalize();
+
+    // let newPos = camera.initial_position.clone();
+    // let forwardPhase = Math.cos(Math.PI * 2 * cameraTime/settings.camera.forward.period);
+    // let upPhase = Math.sin(Math.PI * 2 * cameraTime/settings.camera.up.period);
+
+    // //newPos.add(forward.multiplyScalar((forwardPhase+1)/2 * settings.camera.forward.maxDist));
+    // //newPos.y += (upPhase+1)/2 * settings.camera.up.maxDist;
+
+    // //camera.position.copy(newPos);
+}
+
 function animate(){
     delta = clock.getDelta();
+    updateCameraMovement();
     controls.update();
     renderer.render(scene, camera);
     updateWind();

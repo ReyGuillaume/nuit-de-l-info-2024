@@ -186,6 +186,13 @@ footer a:hover {
   align-items: center;
 }
 
+@media only screen and (max-width: 600px){
+  .modal-div{
+    display: flex;
+    align-items: center;
+    flex-direction: column-reverse;
+  }
+}
 
  .modal-div img{
   height: 45vh;

@@ -13,13 +13,42 @@ onload = _ => {
   canvas.height = canvas.clientHeight;
 
   
+
+  let taillePoissonClown = {
+    x: 120,
+    y: 80
+  }
+
+  let taillePoissonBlob = {
+    x: 200,
+    y: 100
+  }
+
+  let imagePoissonClown = {
+    x: 150,
+    y: 500,
+    width: 1575,
+    height: 1000
+  }
+
+  let imagePoissonBlob = {
+    x: 0,
+    y: 0,
+    width: 1280,
+    height: 624
+  }
+  
   
   let deltaTime = 0;
   let currentTime = performance.now();
 
-  let positionPoissonX;
-  let positionPoissonY;
+  let positionPoissonClownX;
+  let positionPoissonClownY;
 
+  let positionPoissonBlobX;
+  let positionPoissonBlobY;
+
+  let flipClown = true;
   var loop = () => {
 
     deltaTime = -currentTime + (currentTime = performance.now());
@@ -28,16 +57,29 @@ onload = _ => {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     
-    const image = document.getElementById("image");
+    const clown = document.getElementById("clown");
+    const clownFlip = document.getElementById("clown-flip");
+    const blob = document.getElementById("blob");
 
-    positionPoissonX = canvas.width/2 + 500*Math.sin(currentTime * 0.001);
-    positionPoissonY = canvas.height/2 + 100*Math.sin(currentTime * 0.005);
+    positionPoissonClownX = canvas.width/2 + (canvas.width/2 + taillePoissonClown.x)*Math.sin(currentTime * 0.001) - taillePoissonClown.x/2;
+    if (positionPoissonClownX <= -taillePoissonClown.x)
+      {
+        flipClown = true;
+      }
+    if (positionPoissonClownX >= canvas.width) {
+        flipClown = false;
+    }
+    positionPoissonClownY = canvas.height/2 + 100*Math.sin(currentTime * 0.005);
+
+    if (positionPoissonBlobY > canvas.height)
+      positionPoissonBlobX = Math.random() * (canvas.width - taillePoissonBlob.x);
+    positionPoissonBlobY = canvas.height + 100*(Math.sin(currentTime * 0.005) - Math.abs(Math.sin(currentTime*0.005)) + 1);
     
+  console.log(flipClown)
+    ctx.drawImage(flipClown ? clownFlip : clown, imagePoissonClown.x, imagePoissonClown.y, imagePoissonClown.width, imagePoissonClown.height, positionPoissonClownX, positionPoissonClownY, taillePoissonClown.x, taillePoissonClown.y);
 
+    ctx.drawImage(blob, imagePoissonBlob.x, imagePoissonBlob.y, imagePoissonBlob.width, imagePoissonBlob.height, positionPoissonBlobX, positionPoissonBlobY, taillePoissonBlob.x, taillePoissonBlob.y);
 
-    ctx.drawImage(image, 150, 500, 1575, 1000, positionPoissonX, positionPoissonY, 120, 80);
-    image.addEventListener("load", (e) => {
-    });
 
     requestAnimationFrame(loop);
   }
@@ -48,14 +90,21 @@ onload = _ => {
     console.log(getMousePos(canvas, event))
     let mousePos = getMousePos(canvas, event);
     if (
-      mousePos.x >= positionPoissonX && 
-      mousePos.y >= positionPoissonY && 
-      mousePos.x <= positionPoissonX + 120 && 
-      mousePos.y <= positionPoissonY + 80
+      mousePos.x >= positionPoissonClownX && 
+      mousePos.y >= positionPoissonClownY && 
+      mousePos.x <= positionPoissonClownX + taillePoissonClown.x && 
+      mousePos.y <= positionPoissonClownY + taillePoissonClown.y
     )
-    setCounter(1)
-    else 
-    setCounter(-1)
+      setCounter(1)
+    else if (
+      mousePos.x >= positionPoissonBlobX && 
+      mousePos.y >= positionPoissonBlobY && 
+      mousePos.x <= positionPoissonBlobX + taillePoissonBlob.x && 
+      mousePos.y <= positionPoissonBlobY + taillePoissonBlob.y
+    )
+      setCounter(5)
+    else
+      setCounter(-1)
   });
 
   function getMousePos(canvas, evt) {

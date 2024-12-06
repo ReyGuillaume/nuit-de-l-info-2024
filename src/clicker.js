@@ -89,6 +89,7 @@ onload = _ => {
   requestAnimationFrame(loop);
 
   let counter = 0;
+  canvas.gameCounter = 0;
   canvas.addEventListener('click', (event) => {
     console.log(getMousePos(canvas, event))
     let mousePos = getMousePos(canvas, event);
@@ -119,14 +120,12 @@ onload = _ => {
   }
 
 
-  const cpt = document.getElementById('cpt');
 
   const setCounter = (number) => {
     counter += number;
     if (counter < 0)
       counter = 0;
-    cpt.innerHTML = counter; 
+    canvas.gameCounter = counter;
   };
   
 }
-

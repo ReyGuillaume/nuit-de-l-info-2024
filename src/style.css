@@ -135,18 +135,13 @@ footer{
 
 #jeu {
   width: 50vw;
-  height: 65vh;
+  height: 90vh;
   border: #000000 2px solid;
 }
 
 
 
-#cpt {
-  position: absolute;
-  font-size: 5vh;
-  top: 12vh;
-  left: 56vw;
-}
+
 
 .poisson {
   display: none;

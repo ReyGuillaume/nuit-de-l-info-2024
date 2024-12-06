@@ -56,6 +56,8 @@ onload = _ => {
     deltaTime = -currentTime + (currentTime = performance.now());
 
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.font = "50px Arial";
+    ctx.fillText(counter,10,80);
 
     
     const clown = document.getElementById("clown");

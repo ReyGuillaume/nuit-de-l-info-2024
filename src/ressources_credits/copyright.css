@@ -26,44 +26,71 @@
   }
   
   .ocean{
-    z-index:-1;
+    position: relative;
     height:100%;
     width:100%;
 
   }
-  .waves{
-    position : relative;
+  .waves {
+    position: fixed;
     width: 100%;
-    height: 10vh;
-  }
+    height: 12vh;
+    margin-top: 30vh;
+    animation: animate_waves 5s;
+    z-index: -1; /* Place la vague derrière le contenu principal */
+    background: url('wave.png') repeat-x;
+}
 
-  .wave{
+  /*.wave{
     position: absolute;
     bottom: 0;
     left: 0;
     background: url(wave.png);
     width: 100%;
-    height: 10vh;
+    height: 12vh;
+  }*/
+
+  .continuite{
+    position : fixed;
+    height:100vh;
+    width: 100%;
+    z-index: -1;
+    background-color: #124559;
+    margin-top: 42vh;
   }
 
-  @keyframes animate{
+  @keyframes animate_waves{
     0%{
-      background-color: #0b37fc;
-    }
-    25%{
-      background-color: #0b9cfc;
-    }
-    50%{
-      background-color: #00eeff;
-    }
-    75%{
-      background-color: #0b9cfc;
+      background-position-x: 0% ;
     }
     100%{
-      background-color: #0b37fc;
+      background-position-x: 100%;
     }
   }
+  #wave1{
+    bottom:0;
+    opacity: 1;
+  }
 
+  #wave2{
+    bottom:10px;
+    opacity: 0.5;
+  }
+
+  #wave3{
+    bottom:15;
+    opacity: 0.7;
+  }
+
+  #wave4{
+    bottom:20;
+    opacity: 0.4;
+  }
+
+  #wave5{
+    bottom:0;
+    opacity: 1;
+  }
   body {
     margin: 0;
     display: flex;
@@ -80,6 +107,13 @@
     width: 100%;
   }
   
+.membres{
+  height:100%;
+  width:100%
+  
+
+}
+
   header h1 {
     text-align: center;
   }

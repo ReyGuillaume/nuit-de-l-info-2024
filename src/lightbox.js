@@ -3,6 +3,7 @@ var modal = document.getElementById("modal-id");
 var poumon = document.getElementById("poumon");
 var coeur = document.getElementById("coeur");
 var estomac = document.getElementById("estomac");
+var cerveau = document.getElementById("cerveau");
 
 var span = document.querySelector(".close");
 var text = document.querySelector(".modal-text");
@@ -18,12 +19,20 @@ poumon.onclick = function () {
 
 coeur.onclick = function () {
     modal.style.display = "block";
-    text.innerHTML = "Le coeur gère le flux sanguin et le flux sanguin est lié aux courants marins de l'océan."
+    text.innerHTML = "Le cœur humain est le moteur du corps, pompant le sang à travers un réseau de vaisseaux pour transporter l’oxygène et les nutriments jusqu’aux organes. De manière semblable, les courants océaniques agissent comme le système circulatoire de la planète, déplaçant l’eau, la chaleur et les nutriments à travers les mers pour maintenir l’équilibre climatique et nourrir les écosystèmes marins. Comme le sang qui relie chaque partie du corps, ces courants connectent les océans, influençant les cycles de vie et régulant la température globale. Les perturbations climatiques, à l’image des maladies cardiovasculaires pour le corps, mettent en danger ce système vital. Préserver les courants océaniques, c’est protéger le battement régulier du cœur de la Terre."
+    img.src = ""
 }
 
 estomac.onclick = function () {
     modal.style.display = "block";
-    text.innerHTML = "L'estomac est représenté par le plancton qui est à l'origine de la chaîne alimentaire de la faune marine."
+    text.innerHTML = "L’estomac humain est un organe clé qui transforme la nourriture en énergie pour le corps. De la même manière, l’océan agit comme un immense estomac pour la planète, absorbant des éléments nutritifs et des déchets pour les recycler et les redistribuer dans les écosystèmes marins. Dans l’estomac, des acides et des enzymes décomposent les aliments, tandis que dans l’océan, des organismes comme le phytoplancton, le zooplancton et les bactéries transforment la matière organique et le CO₂ en oxygène et en énergie pour d’autres formes de vie. Mais tout comme un excès de toxines peut perturber l’estomac humain, la pollution surcharge l’océan, compromettant sa capacité à nourrir la vie sur Terre."
+    img.src = ""
+}
+
+cerveau.onclick = function () {
+    modal.style.display = "block";
+    text.innerHTML = "Le cerveau est comme un chef d’orchestre : il dirige tout dans le corps, en contrôlant les mouvements, la respiration et les pensées. L’océan joue un rôle semblable pour la planète. Grâce à ses courants et à ses échanges, il régule le climat, influence la météo et nourrit la vie. Comme le cerveau enregistre des souvenirs, l’océan garde la chaleur et le carbone pour aider la Terre à rester stable. Mais quand il est pollué ou trop chauffé, cet équilibre est perturbé, un peu comme quand le stress affecte le cerveau. Protéger l’océan, c’est veiller sur le cœur et l’esprit de notre planète."
+    img.src = ""
 }
 
 span.onclick = function () {

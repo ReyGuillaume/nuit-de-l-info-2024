@@ -48,7 +48,7 @@
     position: fixed; /* Positionnement par rapport à .ocean */
     top: 50%; /* Contrôle de la position verticale */
     width: 200%; /* Augmente la largeur pour permettre un défilement fluide */
-    height: 12%;
+    height: 100%;
     animation: animate_waves 60s infinite alternate; /* Animation fluide et continue */
     z-index: -1; /* Place les vagues derrière le contenu principal */
     background: url('wave.png') repeat-x;

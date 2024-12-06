@@ -29,7 +29,7 @@
     z-index:-1;
     height:100%;
     width:100%;
-    animation: animate 5s ease infinite;
+    animation: animate 10s ease infinite;
 
   }
 
@@ -55,44 +55,46 @@
     margin: 0;
     display: flex;
     place-items: center;
-    min-width: 320px;
     min-height: 100vh;
     flex-direction: column;
     font-family: 'Helvetica';
   }
   
   header {
+    background-color: #747bff;
     display: flex;
     flex-direction: column;
     width: 100%;
-    border-bottom: white 2px solid;
   }
   
   header h1 {
     text-align: center;
   }
   
-  header nav {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  nav {
+    display: flex; /* Aligne les enfants (les `<li>`) */
+    flex-direction: column; /* Aligne les éléments verticalement */
+    align-items: flex-start; /* Texte aligné à gauche */
+    gap: 1rem; /* Espacement entre chaque élément de la liste */
+    padding: 1rem; /* Ajoute de l'espace autour du contenu */
   }
   
-  header li {
-    margin: 0 1.1vw;
-    margin-bottom: 1.1vw;
-    list-style: none;
-    transition: all ease 0.2s;
+  
+  li {
+    display: flex; /* Aligne les enfants horizontalement */
+    align-items: center; /* Aligne le texte et l'image verticalement */
+    gap: 1rem; /* Ajoute de l'espace entre le texte et l'image */
+    margin: 1rem 0; /* Espacement vertical entre les éléments de la liste */
   }
   
-  header a {
+  a {
     background-color: #646cff;
     border: solid;
     padding: 1.01vw;
     border-radius: 10%;
   }
   
-  header li:hover #slide{
+  li:hover #slide{
     color: rgb(255, 255, 255);
     transform: scale(1.1);
     left:0;
@@ -100,9 +102,9 @@
 
 
   
-  .dev{
+  .image{
     width:10vw;
-    height:10vh
+    height:10vw
 
 
   }

@@ -137,6 +137,7 @@ footer{
 #jeu {
   width: 50vw;
   height: 65vh;
+  border: #000000 2px solid;
 }
 
 

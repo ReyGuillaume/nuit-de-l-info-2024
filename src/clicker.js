@@ -55,8 +55,7 @@ onload = _ => {
 
     deltaTime = -currentTime + (currentTime = performance.now());
 
-    ctx.fillStyle = 'lightblue';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     
     const clown = document.getElementById("clown");

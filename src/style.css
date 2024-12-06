@@ -106,11 +106,12 @@ h1 {
 footer{
   display: flex;
   justify-content: center;
-  padding-top: 5%;
-  padding-bottom: 5%;
+  padding-top: 2.5%;
+  padding-bottom: 2.5%;
   background-color: #747bff;
   width: 100%;
   margin-bottom: auto;
+  margin-top: auto;
 }
 
 .window {
@@ -123,6 +124,7 @@ footer{
 
 #clicker {
   width: 50vw;
+  background-color: lightblue;
 }
 
 .corps img {
@@ -166,16 +168,17 @@ footer a:hover {
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
-  height: 65vh;
+  height: fit-content;
   border-radius: 30px;
 }
 
 .modal-text {
+  background-color: #747bff;
   text-align: justify;
   text-justify: auto;
-  border: solid;
-  border-radius: 30px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;  border-radius: 30px;
   padding: 10px;
+  max-width: 60%;
 }
 
 .modal-div{
@@ -190,6 +193,7 @@ footer a:hover {
   margin-left: 5vw;
   margin-top: 10vh;
   border-radius: 5%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;  border-radius: 30px;
 } 
 
 .close {

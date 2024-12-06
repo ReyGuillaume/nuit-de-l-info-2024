@@ -167,12 +167,30 @@ footer a:hover {
   border: 1px solid #888;
   width: 80%;
   height: 65vh;
+  border-radius: 30px;
 }
 
 .modal-text {
   text-align: justify;
   text-justify: auto;
+  border: solid;
+  border-radius: 30px;
+  padding: 10px;
 }
+
+.modal-div{
+  display: flex;
+  align-items: center;
+}
+
+
+ .modal-div img{
+  height: 45vh;
+  width: 60%;
+  margin-left: 5vw;
+  margin-top: 10vh;
+  border-radius: 5%;
+} 
 
 .close {
   color: black;

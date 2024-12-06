@@ -4,6 +4,8 @@ var poumon = document.getElementById("poumon");
 var coeur = document.getElementById("coeur");
 var estomac = document.getElementById("estomac");
 var cerveau = document.getElementById("cerveau");
+var articulations = document.getElementById("articulations");
+
 
 var span = document.querySelector(".close");
 var text = document.querySelector(".modal-text");
@@ -25,13 +27,19 @@ coeur.onclick = function () {
 
 estomac.onclick = function () {
     modal.style.display = "block";
-    text.innerHTML = "L’estomac humain est un organe clé qui transforme la nourriture en énergie pour le corps. De la même manière, l’océan agit comme un immense estomac pour la planète, absorbant des éléments nutritifs et des déchets pour les recycler et les redistribuer dans les écosystèmes marins. Dans l’estomac, des acides et des enzymes décomposent les aliments, tandis que dans l’océan, des organismes comme le phytoplancton, le zooplancton et les bactéries transforment la matière organique et le CO₂ en oxygène et en énergie pour d’autres formes de vie. Mais tout comme un excès de toxines peut perturber l’estomac humain, la pollution surcharge l’océan, compromettant sa capacité à nourrir la vie sur Terre."
+    text.innerHTML = "L’estomac transforme la nourriture en énergie pour le corps. L’océan, lui, agit comme un immense estomac pour la planète : il recycle les nutriments et les déchets pour nourrir la vie marine. Tout comme les acides de l’estomac décomposent les aliments, des organismes dans l’océan, comme le phytoplancton, transforment la matière en oxygène et en énergie. Mais si l’estomac peut être perturbé par des toxines, la pollution empêche l’océan de bien remplir son rôle, menaçant la vie sur Terre."
     img.src = ""
 }
 
 cerveau.onclick = function () {
     modal.style.display = "block";
     text.innerHTML = "Le cerveau est comme un chef d’orchestre : il dirige tout dans le corps, en contrôlant les mouvements, la respiration et les pensées. L’océan joue un rôle semblable pour la planète. Grâce à ses courants et à ses échanges, il régule le climat, influence la météo et nourrit la vie. Comme le cerveau enregistre des souvenirs, l’océan garde la chaleur et le carbone pour aider la Terre à rester stable. Mais quand il est pollué ou trop chauffé, cet équilibre est perturbé, un peu comme quand le stress affecte le cerveau. Protéger l’océan, c’est veiller sur le cœur et l’esprit de notre planète."
+    img.src = ""
+}
+
+articulations.onclick = function () {
+    modal.style.display = "block";
+    text.innerHTML = "Les articulations relient les os et permettent au corps de bouger avec fluidité. Elles sont comme des charnières qui supportent et coordonnent tous les gestes. L’océan joue un rôle similaire pour la planète : ses courants et ses marées connectent les continents, transportent la chaleur et les nutriments, et maintiennent le mouvement des écosystèmes. Quand les articulations sont enflammées ou abîmées, le corps devient raide et perd sa mobilité. De la même manière, si l’océan est pollué ou perturbé par le réchauffement, ses courants ralentissent ou changent de direction, affectant le climat et la vie marine. Prendre soin de l’océan, c’est préserver la souplesse et l’harmonie des mouvements de la planète."
     img.src = ""
 }
 

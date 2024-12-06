@@ -123,9 +123,27 @@ footer{
 }
 
 #clicker {
-  width: 50vw;
-  background-color: lightblue;
+  width: 20vw;
 }
+
+#jeu {
+  width: 20vw;
+  height: 65vh;
+}
+
+
+
+#cpt {
+  position: absolute;
+  font-size: 5vh;
+  top: 12vh;
+  left: 56vw;
+}
+
+.poisson {
+  display: none;
+}
+
 
 .corps img {
   height: 20%;

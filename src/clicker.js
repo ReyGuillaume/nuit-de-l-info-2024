@@ -11,6 +11,8 @@ onload = _ => {
 
   canvas.width = canvas.clientWidth;
   canvas.height = canvas.clientHeight;
+  console.log(canvas.width)
+  console.log(canvas.height)
 
   
 
@@ -116,7 +118,6 @@ onload = _ => {
   }
 
 
-  const poisson = document.getElementById('jeu');
   const cpt = document.getElementById('cpt');
 
   const setCounter = (number) => {
